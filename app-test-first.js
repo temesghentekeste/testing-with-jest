@@ -17,6 +17,16 @@ if( orderTotal({
     throw new Error('Check fail: Happy path(2)');
   }
 
+   if (
+     orderTotal({
+       items: [
+         { name: 'bananas', price: 10 },
+       ],
+     }) !== 10
+   ) {
+     throw new Error('Check fail: No quantity specified');
+   }
+
   function orderTotal(order) {
     const total = order.items.reduce( (prev, cur) => prev + cur.price * cur.quantity, 0)
     console.log(total);
