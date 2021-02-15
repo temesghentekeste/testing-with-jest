@@ -24,3 +24,15 @@ it("Another Quantity", () => {
   })).toBe(400)
 })
 
+
+it('Without Quantity', () => {
+  expect(
+    orderTotal({
+      items: [
+        { name: 'bananas', price: 10 },
+        { name: 'apple', price: 15 },
+      ],
+    })
+  ).toBe(25);
+});
+
