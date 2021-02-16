@@ -62,7 +62,6 @@ test('adding floating point numbers', () => {
   expect(value).toBeCloseTo(0.3); // This works.
 });
 
-
 // Strings
 // You can check strings against regular expressions with toMatch:
 
