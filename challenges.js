@@ -6,7 +6,8 @@ function flCapitalize(str) {
 
 // reverseString(string) takes a string and returns it reversed.
 function reverseString(str) {
-  return str.split('').reverse().join();
+  str = str.split('').reverse().join('');
+  return str;
 }
 
 module.exports = { flCapitalize, reverseString };
