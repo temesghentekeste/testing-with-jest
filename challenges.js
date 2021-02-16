@@ -2,7 +2,11 @@
 function flCapitalize(str) {
   str = str[0].toUpperCase() + str.slice(1);
   return str;
-};
+}
 
-module.exports = { flCapitalize };
+// reverseString(string) takes a string and returns it reversed.
+function reverseString(str) {
+  return str.split('').reverse().join();
+}
 
+module.exports = { flCapitalize, reverseString };
