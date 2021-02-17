@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app-test-first.js",
-  
+   "jest": {
+    "verbose": true
+  },
   "scripts": {
     "test": "jest",
     "watch": "jest --watch *.js"

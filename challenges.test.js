@@ -1,5 +1,9 @@
 const challenges = require('./challenges');
 // Capitalize Firt Letter in a String
+test('flCapitalize function to exist', () => {
+  expect(challenges.flCapitalize).toBeDefined();
+});
+
 test('capitalize the first letter', () => {
   let str = 'temesghen';
   str = challenges.flCapitalize(str);
