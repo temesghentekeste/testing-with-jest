@@ -1,21 +1,21 @@
-const someOrder = {
-  items: [
-    { name: 'oranges', price: 8, quantity: 10 },
-    { name: 'avacados', price: 5, quantity: 1 },
-    { name: 'mango', price: 5, quantity: 2 },
-    { name: 'bananas', price: 2, quantity: 10 },
-    { name: 'shipping', price: 40, shipping: true },
-  ],
+const { fetchData } = require('./http');
+
+const button = document.querySelector('button');
+
+const loadTitle = () => {
+  return fetchData().then((extractedData) => {
+    const title = extractedData.title;
+    const transformedTitle = title.toUpperCase();
+    return transformedTitle;
+  });
 };
 
-const orderTotal = (order) => {
-  const totalItems = order.items
-    .filter((x) => !x.shipping)
-    .reduce((prev, cur) => prev + cur.price * cur.quantity, 0);
-
-    const shippingItem = order.items.find( x => !!x.shipping)
-    const shipping = totalItems > 1000 ? 0 : shippingItem.price;
-    return totalItems + shipping
+const printTitle = () => {
+  loadTitle().then((title) => {
+    console.log(title);
+  });
 };
 
-console.log(orderTotal(someOrder));
+button.addEventListener('click', printTitle);
+
+exports.printTitle = printTitle;
