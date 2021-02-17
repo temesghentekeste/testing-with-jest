@@ -10,4 +10,12 @@ function reverseString(str) {
   return str;
 }
 
-module.exports = { flCapitalize, reverseString };
+// creating an object
+const createUser = () => {
+  const user = { firstName: 'Temesghen'}
+  user['lastName'] = 'Bahta'
+
+  return user;
+}
+
+module.exports = { flCapitalize, reverseString, createUser };

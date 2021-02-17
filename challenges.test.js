@@ -13,3 +13,26 @@ test('reverse a given string', () => {
   expect(str).toBe('nehgsemet');
 });
 
+// Testing an object equality: toEqual
+test('user should be Temesghen Bahta object', () => {
+  expect(challenges.createUser()).toEqual({
+    firstName: 'Temesghen',
+    lastName: 'Bahta',
+  });
+});
+
+// Testing an object equality: toStrictEqual
+test('user should be Temesghen Bahta object', () => {
+  expect(challenges.createUser()).toStrictEqual({
+    firstName: 'Temesghen',
+    lastName: 'Bahta',
+  });
+});
+
+// Testing an object equality: toBe
+test('user should not be Temesghen Bahta object', () => {
+  expect(challenges.createUser()).not.toBe({
+    firstName: 'Temesghen',
+    lastName: 'Bahta',
+  });
+});
