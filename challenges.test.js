@@ -1,4 +1,12 @@
 const challenges = require('./challenges');
+
+
+beforeEach(() => initializeDb())
+beforeEach(() => closeDb());
+
+const initializeDb = () => console.log('Database initialized...');
+const closeDb = () => console.log('Database closed...');
+
 // Capitalize Firt Letter in a String
 test('flCapitalize function to exist', () => {
   expect(challenges.flCapitalize).toBeDefined();
