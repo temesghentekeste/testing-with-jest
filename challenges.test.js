@@ -1,11 +1,29 @@
 const challenges = require('./challenges');
 
-
+// Before and after each and every test
 // beforeEach(() => initializeDb())
 // afterEach(() => closeDb());
 
-beforeAll(() => initializeDb())
-afterAll(() => closeDb());
+// Before all tests and after all tests
+// beforeAll(() => initializeDb())
+// afterAll(() => closeDb());
+
+// Before a specific test case
+const nameCheck = () => console.log('Checking name...');
+describe('checking names', () => {
+  // beforeEach(() => nameCheck());
+  beforeAll(() => nameCheck());
+
+  test('user is jeff', () => {
+    let user = 'jeff';
+    expect(user).toEqual('jeff');
+  });
+
+  test('user is jane', () => {
+    let user = 'jane';
+    expect(user).toEqual('jane');
+  });
+});
 
 const initializeDb = () => console.log('Database initialized...');
 const closeDb = () => console.log('Database closed...');
