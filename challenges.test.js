@@ -37,10 +37,17 @@ test('user should not be Temesghen Bahta object', () => {
   });
 });
 
-// Working with async data
+// Working with async data: promise
 test('user fetched should be Leanne Graham', () => {
   expect.assertions(1);
   return challenges.fetchUser().then((data) => {
     expect(data.name).toEqual('Leanne Graham');
   });
+});
+
+// Working with async data: aync/await
+test('user fetched should be Leanne Graham', async () => {
+  expect.assertions(1);
+  const data = await challenges.fetchUser();
+  expect(data.name).toEqual('Leanne Graham');
 });
