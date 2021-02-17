@@ -28,3 +28,8 @@ test('divide by zero throws an error', () => {
   let calculator = new Calculator(10, 0);
   expect(() => calculator.divide()).toThrow('Error: Divide by zero!');
 });
+
+test('divide by a number other than zero does not throws an error', () => {
+  let calculator = new Calculator(10, 5);
+  expect(() => calculator.divide()).not.toThrow('Error: Divide by zero!');
+});
