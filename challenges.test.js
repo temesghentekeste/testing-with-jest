@@ -36,3 +36,11 @@ test('user should not be Temesghen Bahta object', () => {
     lastName: 'Bahta',
   });
 });
+
+// Working with async data
+test('user fetched should be Leanne Graham', () => {
+  expect.assertions(1);
+  return challenges.fetchUser().then((data) => {
+    expect(data.name).toEqual('Leanne Graham');
+  });
+});
