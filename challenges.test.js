@@ -1,8 +1,11 @@
 const challenges = require('./challenges');
 
 
-beforeEach(() => initializeDb())
-beforeEach(() => closeDb());
+// beforeEach(() => initializeDb())
+// afterEach(() => closeDb());
+
+beforeAll(() => initializeDb())
+afterAll(() => closeDb());
 
 const initializeDb = () => console.log('Database initialized...');
 const closeDb = () => console.log('Database closed...');
